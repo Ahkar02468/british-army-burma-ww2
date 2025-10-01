@@ -31,22 +31,20 @@ export default function RootLayout({ children }) {
                   </p>
                 </div>
                 <Flex as="nav" align="center">
+                  <Button
+                    onClick={onOpen}
+                    colorScheme="yellow"
+                    _hover={{ bg: "yellow.400", color: "gray.800" }}
+                  >
+                    Why the "Forgotten Army"?
+                  </Button>
                   <Image
-                    src="/images/arrow.svg"
+                    src="/images/chevron-arrowhead.svg"
                     alt="Arrow pointing to button"
-                    width={80}
-                    height={32}
+                    width={40}
+                    height={25}
                     className="hand-drawn-arrow"
                   />
-                  <div>
-                    <Button
-                      onClick={onOpen}
-                      colorScheme="yellow"
-                      _hover={{ bg: "yellow.400", color: "gray.800" }}
-                    >
-                      Why the "Forgotten Army"?
-                    </Button>
-                  </div>
                 </Flex>
               </div>
             </header>

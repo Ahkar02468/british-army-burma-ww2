@@ -1,19 +1,22 @@
-import React from "react";
-import { Box, ChakraProvider } from "@chakra-ui/react";
-import NextLink from "next/link";
+"use client";
+
+import {
+  Box,
+  ChakraProvider,
+  useDisclosure,
+  Button,
+  Flex,
+} from "@chakra-ui/react";
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import DrawerBox from "./components/DrawerBox";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "British Army Burma Campaign WWII",
-  description:
-    "Ranks and terminology of the British Army during WWII Burma Campaign in Burmese language",
-};
-
 export default function RootLayout({ children }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -27,9 +30,24 @@ export default function RootLayout({ children }) {
                     Ranks and Terminology in Burmese Language
                   </p>
                 </div>
-                <nav>
-                  <NextLink href="/">Why Forgotten Army</NextLink>
-                </nav>
+                <Flex as="nav" align="center">
+                  <Image
+                    src="/images/arrow.svg"
+                    alt="Arrow pointing to button"
+                    width={80}
+                    height={32}
+                    className="hand-drawn-arrow"
+                  />
+                  <div>
+                    <Button
+                      onClick={onOpen}
+                      colorScheme="yellow"
+                      _hover={{ bg: "yellow.400", color: "gray.800" }}
+                    >
+                      Why the "Forgotten Army"?
+                    </Button>
+                  </div>
+                </Flex>
               </div>
             </header>
             <main>
@@ -50,6 +68,7 @@ export default function RootLayout({ children }) {
                 />
               </Box>
               {children}
+              <DrawerBox isOpen={isOpen} onClose={onClose} />
             </main>
             <footer>
               <div className="footer-content">

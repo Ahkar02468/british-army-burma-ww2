@@ -53,3 +53,15 @@ footer {
     margin: 0 auto;
     text-align: center;
 }
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+}
+
+.hand-drawn-arrow {
+    animation: wiggle 2s ease-in-out infinite;
+    transform-origin: center;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}

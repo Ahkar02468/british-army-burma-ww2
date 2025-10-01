@@ -30,7 +30,7 @@ The Burma Campaign (1942-1945) was a significant theater of World War II, involv
 ## Technologies Used
 
 - Next.js 15 (App Router)
-- React 19
+- React 18
 - Chakra UI
 - JavaScript
 
